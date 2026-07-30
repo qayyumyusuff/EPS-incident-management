@@ -6,7 +6,9 @@ def display_menu():
     print("=" * 40)
     print("1. Create Incident")
     print("2. View Incidents")
-    print("3. Exit")
+    print("3. Update Incident")
+    print("4. Delete Incident")
+    print("5. Exit")
 
 def create_incident():
 
@@ -21,7 +23,7 @@ def create_incident():
     sap_number = input("SAP number: ")
     location = input("Location: ")
     response_time = input("Response time: ")
-    duration = input("Duration: ")
+    downtime_duration = input("Downtime Duration: ")
 
 
     print("\nIncident Summary")
@@ -32,7 +34,7 @@ def create_incident():
     print(f"SAP Number: {sap_number}")
     print(f"Location: {location}")
     print(f"Response Time: {response_time}")
-    print(f"Duration: {duration}")
+    print(f"Downtime Duration: {downtime_duration}")
 
 
     incident ={
@@ -42,13 +44,13 @@ def create_incident():
             "sap_number": sap_number,
             "location": location,
             "response_time": response_time,
-            "duration": duration,
+            "downtime_duration": downtime_duration,
         }
     
     
     incidents.append(incident)
 
-def view_incidents():
+def view_incident():
     print("\nView Incidents")
     print("-" * 40)
 
@@ -63,10 +65,58 @@ def view_incidents():
         print(f"SAP Number: {incident['sap_number']}")
         print(f"Location: {incident['location']}")
         print(f"Response Time: {incident['response_time']}")
-        print(f"Duration: {incident['duration']}")
+        print(f"Downtime Duration: {incident['downtime_duration']}")
         print("-" * 40)
 
             
+def update_incident():
+    print("\nUpdate Incident")
+    print("-" * 40)
+
+    sap_number = input("Enter SAP Number: ")
+    print(f"Searching for SAP Number: {sap_number}")
+
+    for incident in incidents:
+        if incident["sap_number"] == sap_number:
+            print("\nIncident found!")
+            print(f"SAP Number: {incident['sap_number']}")
+            print(
+                f"Current Description: "
+                f"{incident['incident_description']}"
+            )
+            print(
+                f"Current Downtime Duration: "
+                f"{incident['downtime_duration']}"
+            )
+
+            new_description = input("New Description: ")
+            new_downtime_duration = input("New Downtime Duration: ")
+
+            incident["incident_description"] = new_description
+            incident["downtime_duration"] = new_downtime_duration
+
+            incident["incident_description"] = new_description
+            incident["downtime_duration"] = new_downtime_duration
+
+            print("\nIncident updated successfully.")
+            return
+
+    print("SAP number not found. Please try again.")
+
+def delete_incident():
+    print("\nDelete Incident")
+    print("-" * 40)
+
+    sap_number = input("Enter SAP Number: ")
+
+    for incident in incidents:
+        if incident["sap_number"] == sap_number:
+            incidents.remove(incident)
+            print("\nIncident deleted successfully.")
+            return
+
+    print("SAP number not found. Please try again.")
+
 def main():
     while True:
         display_menu()
@@ -77,9 +127,15 @@ def main():
             create_incident()
 
         elif choice == "2":
-            view_incidents()
+            view_incident()
             
         elif choice == "3":
+            update_incident()
+            
+        elif choice == "4":
+            delete_incident()
+
+        elif choice == "5":
             print("Exiting...")
             break
 
