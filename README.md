@@ -87,9 +87,9 @@ EPS-incident-management/
 └── .gitignore
 ```
 
+```markdown
 ## Project Status
 
-```text
 The project currently includes a working REST API with SQLite persistence.
 
 Planned improvements:
@@ -97,4 +97,3 @@ Planned improvements:
 - Automated testing
 - Improved project structure
 - Cloud deployment
-```
