@@ -95,3 +95,4 @@ Planned improvements:
 - Automated testing
 - Improved project structure
 - Cloud deployment
+```
