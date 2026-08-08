@@ -85,9 +85,11 @@ EPS-incident-management/
 ├── requirements.txt    # Python dependencies
 ├── README.md
 └── .gitignore
+```
 
 ## Project Status
 
+```text
 The project currently includes a working REST API with SQLite persistence.
 
 Planned improvements:
