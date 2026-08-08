@@ -87,7 +87,6 @@ EPS-incident-management/
 └── .gitignore
 ```
 
-```markdown
 ## Project Status
 
 The project currently includes a working REST API with SQLite persistence.
