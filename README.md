@@ -74,3 +74,24 @@ python -m fastapi dev api.py
 Then open the Swagger documentation at:
 
 `http://127.0.0.1:8000/docs`
+
+## Project Structure
+
+```text
+EPS-incident-management/
+├── api.py              # FastAPI application and API endpoints
+├── database.py         # SQLite database setup
+├── main.py             # Original console prototype
+├── requirements.txt    # Python dependencies
+├── README.md
+└── .gitignore
+
+## Project Status
+
+The project currently includes a working REST API with SQLite persistence.
+
+Planned improvements:
+- Authentication and user roles
+- Automated testing
+- Improved project structure
+- Cloud deployment
