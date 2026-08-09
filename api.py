@@ -1,32 +1,15 @@
 import sqlite3
 
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+from database import get_connection
+from models import Incident, IncidentUpdate
+
 
 app = FastAPI(
     title="EPS Incident Management API",
     description="REST API for managing electrical incident records.",
     version="1.0.0"
 )
-
-def get_connection():
-    connection = sqlite3.connect("incidents.db")
-    connection.row_factory = sqlite3.Row
-    return connection
-
-class Incident(BaseModel):
-    date: str
-    incident_time: str
-    incident_description: str
-    sap_number: str
-    location: str
-    response_time: str
-    downtime_duration: str
-
-
-class IncidentUpdate(BaseModel):
-    incident_description: str
-    downtime_duration: str
 
 
 @app.get("/")

@@ -14,6 +14,7 @@ I started this project as a simple Python console application and later develope
 - Store incident data persistently using SQLite
 - Return appropriate HTTP status codes for API requests
 - Interactive API testing through Swagger UI
+- Automated API tests for CRUD operations and error responses using pytest
 
 ## Tech Stack
 
@@ -22,6 +23,8 @@ I started this project as a simple Python console application and later develope
 - Pydantic
 - SQLite
 - Git and GitHub
+- pytest
+- httpx
 
 ## API Endpoints
 
@@ -80,19 +83,21 @@ Then open the Swagger documentation at:
 ```text
 EPS-incident-management/
 ├── api.py              # FastAPI application and API endpoints
-├── database.py         # SQLite database setup
+├── database.py         # SQLite database setup and connection helpers
+├── models.py           # Pydantic request models
+├── test_api.py         # Automated API tests
 ├── main.py             # Original console prototype
 ├── requirements.txt    # Python dependencies
 ├── README.md
 └── .gitignore
 ```
 
+
 ## Project Status
 
-The project currently includes a working REST API with SQLite persistence.
+The project currently includes a working REST API with SQLite persistence and automated tests for core CRUD and error-handling behavior.
 
 Planned improvements:
 - Authentication and user roles
-- Automated testing
-- Improved project structure
+- Further project structure improvements
 - Cloud deployment
