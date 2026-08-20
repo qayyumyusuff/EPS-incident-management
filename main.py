@@ -95,9 +95,6 @@ def update_incident():
             incident["incident_description"] = new_description
             incident["downtime_duration"] = new_downtime_duration
 
-            incident["incident_description"] = new_description
-            incident["downtime_duration"] = new_downtime_duration
-
             print("\nIncident updated successfully.")
             return
 
