@@ -20,6 +20,7 @@ I started this project as a simple Python console application and later develope
 
 - Python
 - FastAPI
+- uvicorn
 - Pydantic
 - SQLite
 - Git and GitHub
