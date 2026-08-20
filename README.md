@@ -25,7 +25,6 @@ I started this project as a simple Python console application and later develope
 - SQLite
 - Git and GitHub
 - pytest
-- httpx
 
 ## API Endpoints
 
